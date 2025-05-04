@@ -1,0 +1,68 @@
+import { Category } from "../types/category";
+
+export const categoriesData: Category[] = [
+  {
+    id: "1",
+    name: "Technology",
+    description: "Tech articles",
+    articles: 0,
+    createdAt: "2023-10-01",
+    updatedAt: "2023-10-01",
+  },
+  {
+    id: "2",
+    name: "Business",
+    description: "Business articles",
+    articles: 0,
+    createdAt: "2023-10-01",
+    updatedAt: "2023-10-01",
+  },
+  {
+    id: "3",
+    name: "Science",
+    description: "Science articles",
+    articles: 0,
+    createdAt: "2023-10-01",
+    updatedAt: "2023-10-01",
+  },
+  {
+    id: "4",
+    name: "Health",
+    description: "Health articles",
+    articles: 0,
+    createdAt: "2023-10-01",
+    updatedAt: "2023-10-01",
+  },
+  {
+    id: "5",
+    name: "Arts",
+    description: "Arts articles",
+    articles: 0,
+    createdAt: "2023-10-01",
+    updatedAt: "2023-10-01",
+  },
+  {
+    id: "6",
+    name: "Society",
+    description: "Society articles",
+    articles: 0,
+    createdAt: "2023-10-01",
+    updatedAt: "2023-10-01",
+  },
+  {
+    id: "7",
+    name: "Environment",
+    description: "Environment articles",
+    articles: 0,
+    createdAt: "2023-10-01",
+    updatedAt: "2023-10-01",
+  },
+  {
+    id: "8",
+    name: "Finance",
+    description: "Finance articles",
+    articles: 0,
+    createdAt: "2023-10-01",
+    updatedAt: "2023-10-01",
+  },
+];

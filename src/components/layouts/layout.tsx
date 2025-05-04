@@ -7,7 +7,6 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div style={{ minHeight: "100vh" }} className="d-flex flex-column">
-      {/* Navbar */}
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
@@ -50,32 +49,32 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
           <div className="position-sticky">
             <ul className="nav flex-column">
               <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
+                <a className="nav-link active" aria-current="page" href="/">
                   Dashboard
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Articles
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
-                  Manuscripts
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">
+                <a className="nav-link" href="/authors">
                   Authors
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <a className="nav-link" href="/manuscripts">
+                  Manuscripts
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/articles">
+                  Articles
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/categories">
                   Categories
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <a className="nav-link" href="/tags">
                   Tags
                 </a>
               </li>

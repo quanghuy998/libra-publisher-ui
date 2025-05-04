@@ -1,4 +1,4 @@
-export type Author = {
+export interface Author {
   id: number;
   name: string;
   email: string;
@@ -8,4 +8,4 @@ export type Author = {
   joinedDate: string;
   avatar: string;
   initials: string;
-};
+}

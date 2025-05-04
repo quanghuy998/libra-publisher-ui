@@ -9,21 +9,19 @@ import {
   faTrash,
 } from "@fortawesome/free-solid-svg-icons"; // Import icons
 
-const AuthorTable: React.FC = () => {
-  const [menuOpen, setMenuOpen] = useState<string | null>(null); // Track open menu for each row
+interface Props {
+  editId: string;
+  deleteId: string;
+  openEditDialog: any;
+  openDeleteDialog: any;
+}
 
-  const toggleMenu = (id: string) => {
-    setMenuOpen(menuOpen === id ? null : id); // Toggle menu visibility
-  };
-
-  const handleEdit = (id: string) => {
-    console.log(`Editing item with ID: ${id}`);
-  };
-
-  const handleDelete = (id: string) => {
-    console.log(`Deleting item with ID: ${id}`);
-  };
-
+const AuthorTable: React.FC<Props> = ({
+  editId,
+  deleteId,
+  openEditDialog,
+  openDeleteDialog,
+}) => {
   const columns: TableColumn[] = [
     {
       header: "Author",
@@ -44,44 +42,24 @@ const AuthorTable: React.FC = () => {
       header: "Action",
       accessor: "action",
       render: (value: string, row: any) => (
-        <div className="dropdown">
-          {/* Font Awesome Menu Icon */}
-          <button
-            className="btn btn-outline-secondary rounded-circle p-2"
-            type="button"
-            style={{
-              width: "40px",
-              height: "40px",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-            onClick={() => toggleMenu(row.id)}
+        <>
+          <div
+            data-bs-toggle="modal"
+            data-bs-target={editId}
+            className="btn btn-light mx-1"
+            onClick={() => openEditDialog(row.id)}
           >
-            <FontAwesomeIcon icon={faEllipsisVertical} />{" "}
-            {/* Font Awesome Vertical Ellipsis Icon */}
-          </button>
-          {menuOpen === row.id && (
-            <ul className="dropdown-menu show">
-              <li>
-                <button
-                  className="dropdown-item"
-                  onClick={() => handleEdit(row.id)}
-                >
-                  <FontAwesomeIcon icon={faEdit} /> Edit {/* Edit icon */}
-                </button>
-              </li>
-              <li>
-                <button
-                  className="dropdown-item"
-                  onClick={() => handleDelete(row.id)}
-                >
-                  <FontAwesomeIcon icon={faTrash} /> Delete {/* Delete icon */}
-                </button>
-              </li>
-            </ul>
-          )}
-        </div>
+            <FontAwesomeIcon icon={faEdit} />
+          </div>
+          <div
+            data-bs-toggle="modal"
+            data-bs-target={deleteId}
+            className="btn btn-light mx-1"
+            onClick={() => openDeleteDialog(row.id)}
+          >
+            <FontAwesomeIcon icon={faTrash} />
+          </div>
+        </>
       ),
     },
   ];

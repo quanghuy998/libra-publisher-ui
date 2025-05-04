@@ -4,7 +4,7 @@ import {
   faEllipsisVertical,
   faSortUp,
   faSortDown,
-} from "@fortawesome/free-solid-svg-icons"; // Sorting icons
+} from "@fortawesome/free-solid-svg-icons";
 
 export interface TableColumn {
   header: string;
@@ -89,7 +89,7 @@ const Table: React.FC<TableProps> = ({ columns, data }) => {
           {columnsWithDefault.map((col, index) => (
             <th
               key={index}
-              className="p-3"
+              className="p-2"
               onClick={() => col.sort !== "none" && handleSort(col.accessor)} // Only sort if column is not marked as 'none'
               style={{ cursor: col.sort !== "none" ? "pointer" : "default" }}
             >
@@ -108,7 +108,7 @@ const Table: React.FC<TableProps> = ({ columns, data }) => {
         {sortedData.map((row, rowIndex) => (
           <tr key={rowIndex}>
             {columnsWithDefault.map((col, colIndex) => (
-              <td key={colIndex} className="p-3">
+              <td key={colIndex} className="p-2">
                 {col.render
                   ? col.render(row[col.accessor], row)
                   : row[col.accessor]}

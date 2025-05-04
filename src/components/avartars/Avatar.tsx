@@ -9,7 +9,7 @@ interface AvatarProps {
   size?: number;
 }
 
-const Avatar: React.FC<AvatarProps> = ({ avatarUrl, initials, size = 10 }) => {
+const Avatar: React.FC<AvatarProps> = ({ avatarUrl, initials, size = 100 }) => {
   const avatarStyle = {
     width: size,
     height: size,
@@ -24,9 +24,9 @@ const Avatar: React.FC<AvatarProps> = ({ avatarUrl, initials, size = 10 }) => {
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#007bff",
     color: "white",
     fontSize: size / 2,
+    backgoundColor: "grey",
     fontWeight: "bold",
   };
 
